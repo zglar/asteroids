@@ -21,6 +21,8 @@ def main():
     #Add player
     player = Player((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))
 
+    updatable = [player]
+    drawable = [player]
 
     #Initializing game setup
     while True:
@@ -28,11 +30,16 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
-        player.update(dt)
+        #Update player
+        for obj in updatable:
+            obj.update(dt)
 
+        #Fill Screen
         screen.fill((0, 0, 0))
         
-        player.draw(screen)
+        #Draw player
+        for obj in drawable:
+            obj.draw(screen)
 
         pygame.display.flip()
 
