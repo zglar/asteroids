@@ -39,10 +39,11 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
-        #Update player
+        #Update objects
         for obj in updatable:
             obj.update(dt)
 
+        #Collision check
         for rock in asteroids.sprites():
             if player.collision_check(rock):
                 print("Game over!")
