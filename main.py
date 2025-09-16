@@ -53,6 +53,12 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+        for rock in asteroids.sprites():
+            for shot in shots.sprites():
+                if rock.collision_check(shot):
+                    rock.kill()
+                    shot.kill()
+
         #Fill Screen
         screen.fill((0, 0, 0))
         
