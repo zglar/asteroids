@@ -56,7 +56,7 @@ def main():
         for rock in asteroids.sprites():
             for shot in shots.sprites():
                 if rock.collision_check(shot):
-                    rock.kill()
+                    rock.split()
                     shot.kill()
 
         #Fill Screen
